@@ -1,0 +1,140 @@
+.window {
+  background-color: #373737;
+  border: solid 1px black;
+  border-radius: 10px;
+  position: fixed;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+}
+.window > header,
+.window > .slot {
+  padding: 10px;
+}
+.window > header {
+  border-bottom: solid 1px black;
+  color: white;
+  text-align: center;
+  flex: none;
+}
+.window > .slot {
+  flex: 1;
+}
+
+#inventory > .slot {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 10px;
+  height: 400px;
+}
+#inventory > .slot > main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  gap: 10px;
+  grid-column: span 3/span 3;
+  height: 100%;
+  overflow-y: auto;
+}
+#inventory > .slot > main > .furni {
+  border: solid 1px black;
+  background-color: #171717;
+  padding: 5px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#inventory > .slot > main > .furni:hover {
+  background-color: #2b2b2b;
+  cursor: pointer;
+}
+#inventory > .slot > aside {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  justify-content: space-between;
+}
+#inventory > .slot > aside > .furni-preview {
+  flex: none;
+  border: solid 1px black;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#inventory > .slot > aside > .furni-preview > img {
+  image-rendering: pixelated;
+  width: 100px;
+  height: 100px;
+}
+#inventory > .slot > aside > .actions {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  row-gap: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+canvas {
+  position: fixed;
+  z-index: 0;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+#navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+#navigation > * {
+  text-transform: uppercase;
+}
+
+button {
+  padding: 7px 10px;
+  border: none;
+  border-radius: 5px;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+button:not(:disabled):hover {
+  opacity: 0.8;
+}
+button, button.button-secondary {
+  background-color: #171717;
+  color: white;
+}
+button.button-primary {
+  background-color: #0077ff;
+  color: white;
+}
+
+/*# sourceMappingURL=global.css.map */
